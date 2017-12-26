@@ -18,6 +18,11 @@ public class AccountController {
 	@Autowired
 	private IAccountService accountService;
 	
+	@RequestMapping(value="/index")
+	public String test(){
+		return "success";
+	}
+	
 	@RequestMapping(value="/api/list",method=RequestMethod.GET)
 	public List<Account> getAccountList(){
 		return accountService.getList();
@@ -33,8 +38,5 @@ public class AccountController {
 		accountService.saveAcount(account);
 		return account;
 	}
-	
-	
-	
 	
 }
